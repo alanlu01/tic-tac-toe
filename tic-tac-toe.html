@@ -3,27 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>tic-tac-toe</title>
-    <style>
+    <style type="text/css">
       body {
         background-color: #000;
         color: #fff;
-        font-family: Calibri, sans-serif;
         text-align: center;
-        margin-top: 40px;
+        font-family: Calibri, sans-serif;
       }
       table {
-        margin: 0 auto;
+        margin: 40px auto;
         border-collapse: collapse;
+      }
+      .symbol {
+        font-size: 48px;
       }
       tr {
         height: 100px;
       }
       td {
         width: 100px;
-        border: 2px solid #fff;
         text-align: center;
-        font-size: 48px;
+        border: 2px solid #fff;
         cursor: pointer;
+        color: #fff;
+        transition: background-color 0.2s;
       }
       td:hover {
         background-color: #222;
@@ -61,7 +64,7 @@
           if ((grids[i][1] != "") && (grids[i][1] == grids[i][2]) && (grids[i][2]== grids[i][3])) {
             isLine = true;
           }
-          if ((grids[1][i] != "") && (grids[1][i] == grids[2][i]) && (grids[2][i] == grids[3][i])) {
+          if ((grids[1][i] != "") && (grids[1][i] == grids[2][i]) && ( grids[2][i] == grids[3][i])) {
             isLine = true;
           }				
         }
@@ -86,7 +89,7 @@
           }
         } else if (count == 9) {
           setTimeout(() => { 
-            window.alert("平手！"); 
+            window.alert("平手"); 
             location.reload();
           }, 300);		
         }			
@@ -95,21 +98,21 @@
   </head>
   <body>
     <h1>井字棋遊戲</h1>
-    <table>
+    <table id="table" border="1px" class="symbol">
       <tr>
-        <td id="grid11" onclick="determine(id)"></td>
-        <td id="grid12" onclick="determine(id)"></td>
-        <td id="grid13" onclick="determine(id)"></td>
+        <td id='grid11' onclick="determine(id);"></td>
+        <td id='grid12' onclick="determine(id);"></td>
+        <td id='grid13' onclick="determine(id);"></td>
       </tr>
       <tr>
-        <td id="grid21" onclick="determine(id)"></td>
-        <td id="grid22" onclick="determine(id)"></td>
-        <td id="grid23" onclick="determine(id)"></td>
+        <td id='grid21' onclick="determine(id);"></td>
+        <td id='grid22' onclick="determine(id);"></td>
+        <td id='grid23' onclick="determine(id);"></td>
       </tr>
       <tr>
-        <td id="grid31" onclick="determine(id)"></td>
-        <td id="grid32" onclick="determine(id)"></td>
-        <td id="grid33" onclick="determine(id)"></td>
+        <td id='grid31' onclick="determine(id);"></td>
+        <td id='grid32' onclick="determine(id);"></td>
+        <td id='grid33' onclick="determine(id);"></td>
       </tr>
     </table>
   </body>
